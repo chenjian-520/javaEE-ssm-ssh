@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  	<!-- bean definitions here -->
+	<!-- 创建一个对象    id 对象唯一标识   class 类的全限定命名 -->
+  	<bean id="userdao" class="dao.impl.UserDaoImpl"></bean>
+  	
+  	<bean id="userdao2" class="dao.impl.UserDaoImpl2"></bean>
+  	
+  	<!-- 调用无参构造创建对象   用set 赋值  -->
+	<!-- <bean id="userservice" class="service.impl.UserServiceImpl">
+	标签属性 name： 属性名称   value ： 属性：简单类型的值    ref：引用
+	<property name="dao" ref="userdao2"></property>
+	</bean> -->
+	
+	<!-- 有参构造 -->
+	<bean id="userservice" class="service.impl.UserServiceImpl">
+	<!-- 标签属性 name： 属性名称   value ： 属性：简单类型的值    ref：引用     index:参数的索引    type:参数类型 -->
+	<constructor-arg  name="dao" ref="userdao2"  ></constructor-arg>
+	</bean>
+	
+</beans>

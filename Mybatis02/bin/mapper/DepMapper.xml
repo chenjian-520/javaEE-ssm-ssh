@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.DepMapper">
+
+	<!-- type:对象类型  orm -->
+    <resultMap type="dept" id="deptMap">
+    	<!--  主键字段映射  -->
+    	<id column="deptno" property="deptno"/>
+    	<!-- 非主键字段映射  -->
+    	<result column="dname" property="dname"/>
+    	<result column="loc" property="loc"/>
+    	<!-- 封装结果到集合    property:属性    javaType:每个对象类型 -->
+    	<collection property="emps" ofType="emp" column="deptno">
+    		<id column="empno" property="empno"/>
+    		<result column="ename" property="ename"/>
+    		<result column="job" property="job"/>
+    		<result column="hiredate" property="hiredate"/>
+    		<result column="mgr" property="mgr"/>
+    		<result column="sal" property="sal"/>
+    		<result column="comm" property="comm"/>
+    		<result column="deptno" property="deptno"/>
+    	</collection>
+
+	</resultMap>
+
+	<select id="findDeptAndEmps" resultMap="deptMap">
+		select * from dept left join emp on emp.deptno=dept.deptno
+	</select>
+</mapper>

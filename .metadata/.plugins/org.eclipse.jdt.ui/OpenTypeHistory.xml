@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=SpringWeb/F:\/eclipse\/workplace\/SpringWeb\/WebContent\/WEB-INF\/lib\/spring-core-4.1.6.RELEASE.jar&lt;org.springframework.asm(SpringAsmInfo.class[SpringAsmInfo" modifiers="49" timestamp="1533283580011"/>
+<typeInfo handle="=ssm01/src&lt;mapper{UserMapper.java[UserMapper" modifiers="513" timestamp="1536748945566"/>
+<typeInfo handle="=SSM/F:\/eclipse\/workplace\/SSM\/WebContent\/WEB-INF\/lib\/spring-jdbc-4.1.6.RELEASE.jar&lt;org.springframework.jdbc.datasource(DriverManagerDataSource.class[DriverManagerDataSource" modifiers="33" timestamp="1536651422792"/>
+<typeInfo handle="=SSM/F:\/eclipse\/workplace\/SSM\/WebContent\/WEB-INF\/lib\/mybatis-spring-1.3.1.jar&lt;org.mybatis.spring(SqlSessionFactoryBean.class[SqlSessionFactoryBean" modifiers="33" timestamp="1536651422749"/>
+<typeInfo handle="=SSM/F:\/eclipse\/workplace\/SSM\/WebContent\/WEB-INF\/lib\/mybatis-spring-1.3.1.jar&lt;org.mybatis.spring.mapper(MapperScannerConfigurer.class[MapperScannerConfigurer" modifiers="33" timestamp="1536651422749"/>
+<typeInfo handle="=SSM/F:\/eclipse\/workplace\/SSM\/WebContent\/WEB-INF\/lib\/spring-webmvc-4.1.6.RELEASE.jar&lt;org.springframework.web.servlet(DispatcherServlet.class[DispatcherServlet" modifiers="33" timestamp="1536651422685"/>
+<typeInfo handle="=SSM/F:\/eclipse\/workplace\/SSM\/WebContent\/WEB-INF\/lib\/spring-webmvc-4.1.6.RELEASE.jar&lt;org.springframework.web.servlet.view(InternalResourceView.class[InternalResourceView" modifiers="33" timestamp="1536651422685"/>
+<typeInfo handle="=SpringWeb/F:\/eclipse\/workplace\/SpringWeb\/WebContent\/WEB-INF\/lib\/spring-web-4.1.6.RELEASE.jar&lt;org.springframework.web.context(ContextLoaderListener.class[ContextLoaderListener" modifiers="33" timestamp="1533521509470"/>
+</typeInfoHistroy>

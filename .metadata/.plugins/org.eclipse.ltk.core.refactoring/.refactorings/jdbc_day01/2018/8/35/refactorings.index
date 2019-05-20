@@ -1,0 +1,3 @@
+1535524962426	Move compilation unit
+1535525197785	Extract method 'getConnection'
+1535525459172	Extract method 'closeRes'

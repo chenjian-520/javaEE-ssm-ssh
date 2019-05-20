@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- 属性配置和加载外部属性文件 -->
+<properties resource="jdbc.properties"></properties>
+
+
+<typeAliases>
+	<!--  设置单一别名  -->
+	<typeAlias type="pojo.Userinfo" alias="user"/>
+	<!-- 批量起别名   默认别名就是类的名称-->
+	<package name="pojo"/>
+</typeAliases>
+
+
+<!-- 环境 -->
+  <environments default="development">
+    <!-- 具体环境  id： 当前环境唯一标识 -->
+    <environment id="development">
+    <!-- 事务管理器  type：类型 -->
+      <transactionManager type="JDBC"/>
+      <!-- 数据源  type ： POOLED -->
+      <dataSource type="POOLED">
+      <!-- 获取连接的四个参数 -->
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${root}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <!-- 映射器  -->
+  <mappers>
+    <mapper resource="UserinfoMapper.xml"/>
+  </mappers>
+</configuration>

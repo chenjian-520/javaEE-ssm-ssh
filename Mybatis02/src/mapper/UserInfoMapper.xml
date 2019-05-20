@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="mapper.UserInfoMapper">
+  		<select id="selectById" resultType="Userinfo">
+  			select * from userinfo where uid = #{uid};
+  		</select>
+  		
+  		
+  		<!-- 取别名 -->
+  		<select id="findAll" resultType="Userinfo">
+  			select uid uid, uname uname, password password from userinfo  ;
+  		</select>
+  </mapper>

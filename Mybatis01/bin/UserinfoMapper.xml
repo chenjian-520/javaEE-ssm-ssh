@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!--   nemespace : 命名空间 (隔离sql) -->
+<mapper namespace="aaabbb">
+
+<!--	
+		select/insert/update/delete:MappedStatement
+		1.#{}:占位符
+		 关键字和输入参数有关
+		 	简单类型（String ， 基本类型）：可任意
+		2.id:标签唯一标识
+		3.parameterType：参数类型（可选）
+		4.resultType： 返回结果类型（结果集的封装）
+  -->
+  <select id="selectUserinfo" resultType="Userinfo">
+    select * from userinfo where uid = #{uid};
+  </select>
+
+  <!--查询所有用户信息  -->
+  <select id="selectAll" resultType="Userinfo">
+  	select * from userinfo ;
+  </select>
+  
+  <!-- 查询名称中包含  l 的用户信息  参数：字符串  返回：list集合  
+   		模糊查询： ${} 代表连接符  
+   		  关键字和输入参数有关
+   		  简单类型 ： 必须使用 value
+  -->
+  
+  <select id="selectlikeName" resultType="Userinfo">
+  	select * from userinfo where uname like  '%${value}%';
+  </select>
+  
+  <!-- 添加  输入参数：userinfo对象  
+  		对象类型： 属性名称
+  -->
+  <insert id="insertUserinfo" >
+  	insert into userinfo(uname,password) value(#{uname},#{password});
+  </insert>
+  
+  <!-- 修改   -->
+    <update id="updateUserinfo" >
+  	update  userinfo set uname=#{uname},password =#{password}  where uid = #{uid};
+  </update>
+  
+  <!-- 删除 -->
+    <delete id="deleteUserinfo" >
+  	delete from userinfo where uid = #{uid};
+  </delete>
+  
+</mapper>
+
+
+

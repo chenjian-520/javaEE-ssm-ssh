@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="mapper.studentMapper">
+  
+  <resultMap type="Student" id="studentmap">
+  	<id column="sid" property="sid" />
+  	<result column="sname" property="sname" />
+  	<result column="sex" property="sex" />
+  	<result column="age" property="age" />
+  	<result column="wname" property="wname" />
+  	
+  	<association property="cls" javaType="Class1" column="wname">
+  		<id column="wname" property="wname" />
+  		<result column="chief" property="chief" />
+  	</association>
+  	
+  </resultMap>
+  
+  
+  
+  
+  
+   
+  	<select id="class22" resultMap="studentmap"  >
+  		select * from student c left join class s on s.wname=c.wname;
+  	</select>
+  
+  
+  
+    <select id="findAll" resultType="Student">
+  		select * from student ;
+  	</select>
+  	<select id="findOne" resultType="Student"  parameterType="int">
+  		select * from student where sid = #{sid};
+  	</select>
+  	<update id="update" parameterType="Student">
+  		update student set wname =#{wname},sname = #{sname},sex=#{sex},age=#{age} where sid = #{sid};
+  	</update>
+  	<insert id="insert" parameterType="Student">
+  		insert into student(sid,wname,sname,sex,age) value(#{sid},#{wname},#{sname},#{sex},#{age});
+  	</insert>
+  	<delete id="delete" parameterType="int">
+  		delete from student where sid = #{sid};
+  	</delete>
+  
+  
+  
+  </mapper>

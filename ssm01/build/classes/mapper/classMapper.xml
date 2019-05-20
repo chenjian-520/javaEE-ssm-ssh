@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="mapper.classMapper">
+  
+  	<resultMap type="Class1" id="selectMap">
+  		<id column="wname" property="wname"/>
+  		<result column="chief" property="chief" />
+  		
+  		<collection property="student" ofType="Student" column="wname">
+  			<id column="sid" property="sid" />
+  			<result column="sname" property="sname" />
+  			<result column="sex" property="sex" />
+  			<result column="age" property="age" />
+  			<result column="wname" property="wname" />
+  			
+  		</collection>
+  	
+  	</resultMap>
+  
+  
+  
+  	<!-- 查每个班级的学生信息  -->
+  	<select id="selectAll" resultMap="selectMap">
+  		select * from class c left join student s on s.wname=c.wname ;
+  	</select>
+  
+  
+  	<select id="findAll" resultType="Class1">
+  		select * from class ;
+  	</select>
+  	<select id="findOne" resultType="Class1">
+  		select * from class where wname = #{name};
+  	</select>
+   	<update id="update" parameterType="Class1">
+  		update class set chief =#{chief} where wname = #{wname};
+  	</update>
+  	<insert id="insert" parameterType="Class1">
+  		insert into class(wname,chief) value(#{wname},#{chief});
+  	</insert>
+  	<delete id="delete" parameterType="Class1">
+  		delete from class where wname = #{wname}; 
+  	</delete>
+  	
+  
+  
+  </mapper>

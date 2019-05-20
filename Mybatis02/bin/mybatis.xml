@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  <configuration>
+  	<properties resource="jdbc.properties"></properties>
+  	
+  	<typeAliases>
+  		<package name="pojo"/>
+  	</typeAliases>
+  	
+  	<environments default="dev">
+  		<environment id="dev">
+  			<transactionManager type="JDBC"></transactionManager>
+  			<dataSource type="POOLED">
+  				      <!-- 获取连接的四个参数 -->
+        		<property name="driver" value="${driver}"/>
+       		 	<property name="url" value="${url}"/>
+        		<property name="username" value="${root}"/>
+        		<property name="password" value="${password}"/>
+  			</dataSource>
+  		</environment>
+  	</environments>
+  	
+  	<mappers>
+  		<!-- 批量加载映射文件 : mapper接口mapper映射文件必须同包同名  -->
+  		<package name="mapper"/>
+  	</mappers>
+  	
+  	
+  </configuration>
+  
+  
